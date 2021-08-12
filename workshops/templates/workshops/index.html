@@ -1,44 +1,28 @@
+{% extends 'workshops/base/base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Workshops</title>
-    <link rel="stylesheet" href="{% static 'workshops/base.css' %}">
-    <link rel="stylesheet" href="{% static 'workshops/all-workshops.css' %}">
-  </head>
-  <body>
-    <header id="main-header">
-      <nav><a href="/workshops" id="main-logo">Djangoworkshops</a></nav>
-      <h1>We got great workshops coming up!</h1>
-      <p>Find the one that best suits your needs!</p>
-    </header>
-    <main>
-      <section>
-        <h2>Upcoming workshops</h2>
-        <ol>
-          {% for workshop_item in workshops %}
-            <li class="workshop-item">
-              <article>
-                <div class="workshop-summary">
-                  <div class="workshop-image">
-                    <img src="" alt="">
-                  </div>
-                  <div class="workshop-details">
-                    <h3>{{ workshop_item.title }}</h3>
-                    <address>{{ workshop_item.location }}</address>
-                  </div>
-                </div>
-                <div class="workshop-actions">
-                  <a href="{% url 'workshop-detail' workshop_item.slug %}" class="btn">More Details</a>
-                </div>
-              </article>
-            </li>
-          {% endfor %}
-        </ol>
-      </section>
-    </main>
-  </body>
-</html>
+
+{% block title %}All Workshops{% endblock %}
+
+{% block site_css %}
+  <link rel="stylesheet" href="{% static 'workshops/all-workshops.css' %}">
+{% endblock %}
+   
+{% block main_heading %}
+We got great workshops coming up!
+{% endblock %}
+
+{% block header_content %}
+<p>Find the one that best suits your needs!</p>
+{% endblock %}
+
+{% block body %}
+<section>
+  <h2>Upcoming Workshops</h2>
+  <ol>
+    {% for workshop_item in workshops %}
+      {% include 'workshops/includes/workshop-item.html' with title=workshop_item.title location=workshop_item.location %}
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}
