@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Workshop
 
@@ -11,7 +11,7 @@ def index(request):
 
 
 def workshop_detail(request, workshop_slug):
-    selected_workshop = Workshop.objects.get(slug=workshop_slug)
+    selected_workshop = get_object_or_404(Workshop, slug=workshop_slug)
 
     context = {
         'workshop_found': True,
