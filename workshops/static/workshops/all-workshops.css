@@ -1,0 +1,62 @@
+section {
+    max-width: 40rem;
+    margin: 3rem auto;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .workshop-item {
+    margin: 1rem 0;
+    background-color: #350490;
+    padding: 2rem;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .workshop-summary {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .workshop-image {
+    margin-right: 2rem;
+  }
+  
+  .workshop-image img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .workshop-details h3 {
+    color: inherit;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .workshop-details address {
+    font-style: italic;
+  }
+  
+  .workshop-actions {
+    margin-top: 1.5rem;
+    text-align: right;
+  }
+  
+  .workshop-actions .btn {
+    background-color: #cb82fb;
+    border-color: #cb82fb;
+    color: #350490;
+    padding: 0.75rem 2rem;
+  }
+  
+  .workshop-actions .btn:hover {
+    background-color: #ba82fb;
+    border-color: #ba82fb;
+  }

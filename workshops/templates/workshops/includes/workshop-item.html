@@ -1,0 +1,16 @@
+<li class="workshop-item">
+    <article>
+    <div class="workshop-summary">
+        <div class="workshop-image">
+        <img src="" alt="">
+        </div>
+        <div class="workshop-details">
+        <h3>{{ title }}</h3>
+        <address>{{ location }}</address>
+        </div>
+    </div>
+    <div class="workshop-actions">
+        <a href="{% url 'workshop-detail' workshop_item.slug %}" class="btn">More Details</a>
+    </div>
+    </article>
+</li>
