@@ -1,9 +1,9 @@
-{% extends 'workshops/base/base.html' %}
+{% extends "workshops/base/base.html" %}
 
 {% load static %}
 
 {% block title %}
-  {{ workshop_title }}
+  {{ workshop.title }}
 {% endblock %}
 
 {% block site_css %}
@@ -11,13 +11,11 @@
 {% endblock %}
 
 {% block main_heading %}
-  {{ workshop_title }}
+  {{ workshop.title }}
 {% endblock %}
 
 {% block body %}
   <article>
-    <img src="" alt="">
-
     <section id="location">
       <h2>Workshop Location</h2>
       <address>This workshop takes place in <span>LOCATION</span> (ADDRESS).</address>
@@ -25,7 +23,7 @@
 
     <section id="details">
       <h2>What's This Workshop About?</h2>
-      <p>{{ workshop_description }}</p>
+      <p>{{ workshop.description }}</p>
       <footer>
         <p>Need more details? Please <a href=""></p>
       </footer>
