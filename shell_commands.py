@@ -15,9 +15,15 @@ new_a.location  # through error
 for i in Workshop._meta.get_fields():
     print(i)
 
+
+for place in Location.objects.all():
+    for w in place.workshops.all():
+        print(f'location: {place.name}, workshop: {w.title} ')
+
 # filters
-y_2021 = Workshop.objects.filter(date__year=2021)
+y_2021 = Workshop.objects.filter(date__year=2021).all()
 m_11 = Workshop.objects.filter(date__month=11)
+Workshop.objects.filter(location__address__city='Саратов').all()
 
 # Select realted https://docs.djangoproject.com/en/2.2/ref/models/querysets/#django.db.models.query.QuerySet.select_related
 # know in advance that I'm going use locations in a view
